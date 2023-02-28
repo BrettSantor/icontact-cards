@@ -42,7 +42,7 @@ const contactCardsDb = await openDB('contact-cards', 1);
 // TODO: Complete the deleteDb() function below:
 export const deleteDb = async (id) => {
     const contactCardsDb = await openDB('contact-cards', 1);
-    const tx = contactCardsDb.transaction('contact-cards', 'readonly');
+    const tx = contactCardsDb.transaction('contact-cards', 'readwrite');
     const store = tx.objectStore('contact-cards');
     const request = store.delete(id);
     const result = await request;

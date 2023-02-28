@@ -2,10 +2,10 @@
 const CACHE_NAME = 'Static Files Cache';
 const urlsToCache = [
   '/',
-  'index.html',
-  'src/css/style.css',
-  'src/js/index.js',
-  'src/images/logo.png',
+  '/index.html',
+  '/src/css/style.css',
+  '/src/js/index.js',
+  '/src/images/logo.png',
 ];
 
 self.addEventListener('install', (e) =>

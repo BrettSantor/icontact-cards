@@ -1,0 +1,16 @@
+{
+  "icons": [
+    {
+      "src": "./icon_1024x1024.2ed09136510782fb63c28e55bd215bcf.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
+    }
+  ],
+  "name": "Icontact Cards",
+  "short_name": "MyPWA",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": "./",
+  "description": "My awesome Progressive Web App!",
+  "background_color": "#ffffff"
+}
