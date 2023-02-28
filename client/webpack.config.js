@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const WebpackPwaManifest = require('webpack-pwa-manifest');
 
 module.exports = () => {
   return {
@@ -22,6 +23,21 @@ module.exports = () => {
       new HtmlWebpackPlugin({
         title: 'Client Server',
         template: './index.html'
+      }),
+      new WebpackPwaManifest({
+        name: "Icontact Cards",
+        orientation: "portrait",
+        display: "standalone",
+        start_url: "./",
+        short_name: "MyPWA",
+        description: "My awesome Progressive Web App!",
+        background_color: "#ffffff",
+        publicPath: "./",
+        icons: [
+          {
+            src: path.resolve('src/images/logo.png')
+          }
+        ]
       })
      
     ],
@@ -32,7 +48,18 @@ module.exports = () => {
         {
           test: /\.css$/,
           use: ['style-loader', 'css-loader'],
-        }
+        },
+        {
+          test: /\.m?js$/,
+          exclude: /node_modules/,
+          use: {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env'],
+              plugins: ['@babel/plugin-proposal-object-rest-spread', '@babel/transform-runtime'],
+            },
+          },
+        },
       ]
 
     },
